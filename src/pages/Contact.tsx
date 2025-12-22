@@ -6,7 +6,7 @@ function Contact() {
 
   if (state.succeeded) {
     return (
-      <div className="flex flex-col w-full h-screen items-center justify-center text-center gap-4">
+      <div className="flex flex-col w-full h-full items-center justify-center text-center gap-4">
         <NavBar includeHome={true} />
         <div>
             <p className="text-2xl font-bold">Thank you for your message!</p>

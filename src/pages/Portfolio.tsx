@@ -1,10 +1,10 @@
 import React from "react";
 import NavBar from "../components/NavBar";
-import samiraBackground from "../assets/samira_background5.jpg";
-import autobattler from "../assets/autobattler.png";
-import steamanalysis from "../assets/steamanalysis.png";
-import lab30tritonware from "../assets/lab30tritonware.png";
-import lunarlearning from "../assets/lunarlearning.png";
+import samiraBackground from "../assets/samira_background5.webp";
+import autobattler from "../assets/autobattler.webp";
+import steamanalysis from "../assets/steamanalysis.webp";
+import lab30tritonware from "../assets/lab30tritonware.webp";
+import lunarlearning from "../assets/lunarlearning.webp";
 
 interface Project {
   title: string;
@@ -19,7 +19,7 @@ const projects: Project[] = [
     description:
       "Engineered and launched a character mod, achieving over 149,000 downloads on Thunderstore.io. Developed custom character abilities, animations, and gameplay mechanics using Risk of Rain 2's API and C#. Iteratively improved the mod by actively managing user feedback and resolving issues via the project's GitHub repository.",
     image: samiraBackground,
-    repoLink: "https://thunderstore.io/c/risk-of-rain-2/p/CafeHo/SamiraMod/",
+    repoLink: "https://thunderstore.io/package/CafeHo/SamiraMod/",
   },
   {
     title: "Auto Battler Game Engine",
@@ -53,30 +53,32 @@ const projects: Project[] = [
 
 const Portfolio: React.FC = () => {
   return (
-    <div className="w-full justify-center pt-4 flex flex-col bg-black">
+    <div className="w-screen pt-4 flex flex-col">
       <NavBar includeHome={true}></NavBar>
       <div className="container mx-auto p-4">
         {projects.map((project, index) => (
-          <div
-            key={index}
-            className={`flex items-center justify-center my-8 ${
-              (index + 1) % 2 === 0 ? "flex-row-reverse" : ""
-            }`}
-          >
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-1/2 h-auto object-cover rounded-lg shadow-lg"
-            />
-            <div className="w-1/2 p-6">
-              <h2 className="font-bold text-2xl mb-2">{project.title}</h2>
-              <p className="text-base">{project.description}</p>
-              <div className="pt-4 pb-2">
-                <a href={project.repoLink} className=" rounded-lg">
-                  <button className="flex flex-row items-center gap-1">
-                    <p className="text-xs">View Repository</p>
-                  </button>
-                </a>
+          <div key={index}>
+            <hr className="h-px my-8 bg-hollow2 border-0"></hr>
+            <div
+              className={`flex items-center justify-center my-8 ${
+                (index + 1) % 2 === 0 ? "flex-row-reverse" : ""
+              }`}
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-1/2 h-auto object-cover rounded-lg shadow-lg"
+              />
+              <div className="w-1/2 p-6">
+                <h2 className="font-bold text-2xl mb-2">{project.title}</h2>
+                <p className="text-base">{project.description}</p>
+                <div className="pt-4 pb-2">
+                  <a href={project.repoLink} className=" rounded-lg">
+                    <button className="flex flex-row items-center gap-1">
+                      <p className="text-xs">View Repository</p>
+                    </button>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

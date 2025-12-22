@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="relative w-screen h-screen bg-black">
+    <div className="relative w-screen h-screen bg-hollow1 text-hollow4">
       <BrowserRouter>
         <main className="flex flex-col">
           <Routes>
