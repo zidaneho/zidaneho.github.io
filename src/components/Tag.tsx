@@ -19,6 +19,8 @@ const Tag: React.FC<TagProps> = ({ name, iconSrc, src }) => {
           bg-hollow1 text-hollow4
           
           hover:bg-hollow2
+
+          
         "
       >
         {iconSrc !== "none" && <img src={iconSrc} className="w-5 h-5"></img>}

@@ -5,6 +5,7 @@ import autobattler from "../assets/autobattler.webp";
 import steamanalysis from "../assets/steamanalysis.webp";
 import lab30tritonware from "../assets/lab30tritonware.webp";
 import lunarlearning from "../assets/lunarlearning.webp";
+import Tag from "../components/Tag";
 
 interface Project {
   title: string;
@@ -74,9 +75,7 @@ const Portfolio: React.FC = () => {
                 <p className="text-base">{project.description}</p>
                 <div className="pt-4 pb-2">
                   <a href={project.repoLink} className=" rounded-lg">
-                    <button className="flex flex-row items-center gap-1">
-                      <p className="text-xs">View Repository</p>
-                    </button>
+                    <Tag name="View Repository" src={project.repoLink} iconSrc="none"></Tag>
                   </a>
                 </div>
               </div>
