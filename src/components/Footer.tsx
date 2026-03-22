@@ -1,18 +1,16 @@
 import React from "react";
-import github from "../assets/github-mark-white.png";
-import linkedin from "../assets/InBug-White.png";
 import FooterIcon from "./FooterIcon";
 
 const Footer: React.FC = () => {
   return (
-    <div className="flex flex-row justify-center items-center gap-1">
+    <div className="flex flex-row justify-center items-center gap-1 mb-4">
       <FooterIcon
         src="https://github.com/zidaneho"
-        iconSrc={github}
+        iconSrc={"/contact-images/github-mark-white.png"}
       ></FooterIcon>
       <FooterIcon
         src="https://www.linkedin.com/in/zidane-ho/"
-        iconSrc={linkedin}
+        iconSrc={"/contact-images/InBug-White.png"}
       ></FooterIcon>
     </div>
   );

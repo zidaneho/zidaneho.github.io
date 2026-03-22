@@ -1,12 +1,11 @@
 import React from "react";
-import profilePicture from "../assets/profile-picture.png";
 import { GraduationCap, House } from "lucide-react";
 const Profile: React.FC = () => {
   return (
     <div className="flex flex-row">
       <div className="w-64 h-64 rounded-full overflow-hidden flex-shrink-0">
         <img
-          src={profilePicture}
+          src={"/about-images/profile-picture.webp"}
           className="w-full h-full object-cover"
           alt="Zidane Ho"
           loading="eager"

@@ -15,9 +15,9 @@ const FooterIcon: React.FC<FooterIconProps> = ({ iconSrc, src }) => {
           text-[1em] font-medium font-inherit
           cursor-pointer transition-colors duration-250
           
-          bg-hollow1 text-hollow4
+          bg-hollow2 text-hollow4
           
-          hover:bg-hollow2
+          hover:bg-hollow3
         "
       >
         <img src={iconSrc} className="w-5 h-5"></img>
