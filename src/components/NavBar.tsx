@@ -13,7 +13,7 @@ const NavBar: React.FC<NavBarProps> = ({ includeHome }) => {
       <Tag name="Portfolio" src="/portfolio" iconSrc="none"></Tag>
       <Tag name="About" src="/about" iconSrc="none"></Tag>
       <Tag name="Contact" src="/contact" iconSrc="none"></Tag>
-      
+      <Tag name="Resume" src="/resume" iconSrc="none"></Tag>
     </div>
   );
 };
