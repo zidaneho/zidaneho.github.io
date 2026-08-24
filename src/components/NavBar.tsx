@@ -1,22 +1,38 @@
 import React from "react";
-import Tag from "./Tag";
+import FooterIcon from "./FooterIcon";
+import { DocumentTextIcon } from "@heroicons/react/24/outline";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-
-export interface NavBarProps {
-  includeHome: boolean;
-}
-
-const NavBar: React.FC<NavBarProps> = ({ includeHome }) => {
+const NavBar: React.FC = () => {
   return (
-    <div className="flex flex-row justify-center items-center gap-1">
-      {includeHome && <Tag name="Home" src="/" iconSrc="none"></Tag>}
-      <Tag name="Portfolio" src="/portfolio" iconSrc="none"></Tag>
-      <Tag name="About" src="/about" iconSrc="none"></Tag>
-      <Tag
-        name="Resume"
-        src="https://www.overleaf.com/read/qjktbmtkzfkd#36c428"
-        iconSrc="none"
-      ></Tag>
+    <div className="sticky top-0 z-10 flex p-5 items-center gap-8 bg-hollow2 w-full h-20 min-w-80">
+      <a href={"#home"} className="rounded-lg mr-3">
+        <strong className="text-3xl">zidaneho\</strong>
+      </a>
+
+      <a href={"#about"} className="rounded-lg">
+        <strong>About</strong>
+      </a>
+
+      <a href={"#portfolio"} className="rounded-lg mr-5">
+        <strong>Portfolio</strong>
+      </a>
+
+      <a
+        href={"https://www.overleaf.com/read/qjktbmtkzfkd#36c428"}
+        className="rounded-lg shrink-0"
+      >
+        <DocumentTextIcon className="w-6 h-6" />
+      </a>
+
+      <FooterIcon
+        src="https://github.com/zidaneho"
+        icon={FaGithub}
+      ></FooterIcon>
+      <FooterIcon
+        src="https://www.linkedin.com/in/zidane-ho/"
+        icon={FaLinkedin}
+      ></FooterIcon>
     </div>
   );
 };

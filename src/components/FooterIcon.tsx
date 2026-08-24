@@ -1,27 +1,14 @@
 import type React from "react";
+import type { IconType } from "react-icons";
 
 interface FooterIconProps {
-  iconSrc: string | "none";
+  icon: IconType;
   src: string;
 }
-const FooterIcon: React.FC<FooterIconProps> = ({ iconSrc, src }) => {
+const FooterIcon: React.FC<FooterIconProps> = ({ icon: Icon, src }) => {
   return (
-    <a href={src} className=" rounded-lg">
-      <button
-        className="
-          flex flex-row items-center gap-2
-          rounded-[8px] border border-transparent
-          py-[0.6em] px-[1.2em] 
-          text-[1em] font-medium font-inherit
-          cursor-pointer transition-colors duration-250
-          
-          bg-hollow2 text-hollow4
-          
-          hover:bg-hollow3
-        "
-      >
-        <img src={iconSrc} className="w-5 h-5"></img>
-      </button>
+    <a href={src} className="rounded-lg w-5 h-5 shrink-0">
+      <Icon className="w-full h-full" />
     </a>
   );
 };

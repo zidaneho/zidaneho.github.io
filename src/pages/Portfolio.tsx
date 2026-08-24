@@ -1,5 +1,4 @@
 import React from "react";
-import NavBar from "../components/NavBar";
 import Tag from "../components/Tag";
 import ToolstackBar from "../components/ToolstackBar";
 
@@ -52,6 +51,13 @@ const projects: Project[] = [
     repoLink: "https://github.com/zidaneho/steam_analysis",
   },
   {
+    title: "Blob Slop",
+    description: "A 3D endless-runner built in Godot 4.6 where you steer a growing swarm of blobs down a road, passing through math gates and fighting bosses across changing biomes.",
+    imageUrl:"/project-images/blob-slop.png",
+    toolStack: ["godot"],
+    repoLink:"https://caffieno.itch.io/blob-slop"
+  },
+  {
     title: "Lab 30",
     description:
       "Find yourself immersed in a dark lab full of dangerous monsters. Avoid them and find a way out of the lab! This project was apart of UCSD VGDC's Tritonware kickoff in Fall 2024, made by 5 members to design and deliver the project within 2 weeks.",
@@ -67,13 +73,14 @@ const projects: Project[] = [
     toolStack: ["javascript", "react"],
     repoLink: "https://github.com/zidaneho/mission_learn",
   },
+  
 ];
 
 const Portfolio: React.FC = () => {
   return (
-    <div className="w-screen pt-4 flex flex-col">
-      <NavBar includeHome={true}></NavBar>
+    <div id="portfolio" className="w-full pt-4 flex flex-col scroll-mt-20">
       <div className="container mx-auto p-4">
+        <h1 className="font-bold text-4xl text-center">Portfolio</h1>
         {projects.map((project, index) => (
           <div key={index}>
             <hr className="h-px my-8 bg-hollow2 border-0"></hr>
