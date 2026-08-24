@@ -11,13 +11,19 @@ export interface ToolstackBarProps {
 const ToolstackBar: React.FC<ToolstackBarProps> = ({ tools }) => {
   return (
     <div className="flex flex-row flex-wrap gap-3 mt-4 mb-2">
-      {tools.map((tool) =>
-        CUSTOM_ICONS[tool] ? (
-          <img key={tool} className="w-50 object-contain" src={CUSTOM_ICONS[tool]} alt={tool} />
-        ) : (
-          <StackIcon key={tool} className="w-12" name={tool} variant="dark" />
-        )
-      )}
+      {tools.map((tool) => (
+        <div
+          key={tool}
+          className="flex flex-row items-center gap-2 rounded-lg border border-hollow4 px-3 py-1.5"
+        >
+          <span className="text-sm capitalize">{tool}</span>
+          {CUSTOM_ICONS[tool] ? (
+            <img className="w-6 object-contain" src={CUSTOM_ICONS[tool]} alt={tool} />
+          ) : (
+            <StackIcon className="w-6" name={tool} variant="dark" />
+          )}
+        </div>
+      ))}
     </div>
   );
 };

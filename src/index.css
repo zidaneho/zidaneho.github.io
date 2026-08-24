@@ -5,6 +5,7 @@
   --color-hollow2: #565a75;
   --color-hollow3: #c6b7be;
   --color-hollow4: #fafbf6;
+  --color-hollow4-dark: #c9c9c5;
 }
 
 @layer utilities {
