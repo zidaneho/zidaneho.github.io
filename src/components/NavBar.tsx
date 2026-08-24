@@ -12,8 +12,11 @@ const NavBar: React.FC<NavBarProps> = ({ includeHome }) => {
       {includeHome && <Tag name="Home" src="/" iconSrc="none"></Tag>}
       <Tag name="Portfolio" src="/portfolio" iconSrc="none"></Tag>
       <Tag name="About" src="/about" iconSrc="none"></Tag>
-      <Tag name="Contact" src="/contact" iconSrc="none"></Tag>
-      <Tag name="Resume" src="/resume" iconSrc="none"></Tag>
+      <Tag
+        name="Resume"
+        src="https://www.overleaf.com/read/qjktbmtkzfkd#36c428"
+        iconSrc="none"
+      ></Tag>
     </div>
   );
 };

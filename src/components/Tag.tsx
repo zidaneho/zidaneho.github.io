@@ -6,8 +6,14 @@ interface TagProps {
   src: string;
 }
 const Tag: React.FC<TagProps> = ({ name, iconSrc, src }) => {
+  const isExternal = /^https?:\/\//.test(src);
+
   return (
-    <a href={src} className="rounded-lg">
+    <a
+      href={src}
+      className="rounded-lg"
+      {...(isExternal && { target: "_blank", rel: "noopener noreferrer" })}
+    >
       <button
         className="
           flex flex-row items-center gap-2

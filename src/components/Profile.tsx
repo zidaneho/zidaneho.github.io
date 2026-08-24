@@ -1,5 +1,5 @@
 import React from "react";
-import { GraduationCap, House } from "lucide-react";
+import { AcademicCapIcon, HomeIcon } from "@heroicons/react/24/outline";
 const Profile: React.FC = () => {
   return (
     <div className="flex flex-row">
@@ -16,11 +16,11 @@ const Profile: React.FC = () => {
         <p className="font-extrabold text-4xl">Zidane Ho</p>
         <p className="text-sm font-medium">Games Programmer</p>
         <div className="flex flex-row items-center mt-1 gap-2">
-          <GraduationCap className="w-6 h-6"></GraduationCap>
+          <AcademicCapIcon className="w-6 h-6" />
           <p className="text-sm">B.S of Computer Science at UC San Diego</p>
         </div>
         <div className="flex flex-row items-center mt-1 gap-2">
-          <House className="w-6 h-6"></House>
+          <HomeIcon className="w-6 h-6" />
           <p className="text-sm">Saratoga, CA</p>
         </div>
       </div>
