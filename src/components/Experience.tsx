@@ -1,17 +1,38 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { XMarkIcon } from "@heroicons/react/24/outline";
+import Tag from "./Tag";
+
+export interface ExperienceLink {
+  title: string;
+  url: string;
+  icon?: React.ReactNode;
+}
 
 interface ExperienceProps {
   title: string;
   description: string;
   imageUrl: string;
+  date: Date;
+  links?: ExperienceLink[];
 }
 
 const Experience: React.FC<ExperienceProps> = ({
   title,
   description,
   imageUrl,
+  date,
+  links,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [isOpen]);
 
   return (
     <>
@@ -31,11 +52,17 @@ const Experience: React.FC<ExperienceProps> = ({
         {/* gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 from-0% via-black/15 via-25% to-transparent to-70% opacity-70"></div>
 
+        {/* blur for text legibility */}
+        <div className="absolute inset-x-0 bottom-0 h-2/5 backdrop-blur-sm [mask-image:linear-gradient(to_top,black,transparent)]"></div>
+
         {/* Text Overlay */}
-        <div className="absolute inset-0 flex items-end p-6 pointer-events-none">
+        <div className="absolute inset-0 flex items-end justify-between gap-4 p-6 pointer-events-none">
           <h3 className="text-2xl font-bold text-hollow4 drop-shadow-md">
             {title}
           </h3>
+          <span className="text-sm font-medium text-hollow3 drop-shadow-md whitespace-nowrap">
+            {date.toLocaleDateString("en-US", { month: "short", year: "numeric" })}
+          </span>
         </div>
       </div>
 
@@ -51,23 +78,12 @@ const Experience: React.FC<ExperienceProps> = ({
           >
             {/* Close Button */}
             <button
+              type="button"
               onClick={() => setIsOpen(false)}
-              className="absolute top-4 right-4 z-10 bg-hollow2/80 hover:bg-hollow2 p-2 rounded-full shadow-md text-hollow4 hover:text-white transition-all"
+              className="absolute top-4 right-4 z-10 text-hollow4-dark p-1 transition-colors duration-300 hover:text-hollow4"
+              aria-label="Close"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
+              <XMarkIcon className="w-8 h-8" />
             </button>
 
             <div className="flex flex-col">
@@ -87,6 +103,18 @@ const Experience: React.FC<ExperienceProps> = ({
                 <p className="text-lg text-hollow3 leading-relaxed whitespace-pre-line">
                   {description}
                 </p>
+                {links && links.length > 0 && (
+                  <div className="flex flex-row flex-wrap gap-3">
+                    {links.map((link) => (
+                      <Tag
+                        key={link.url}
+                        name={link.title}
+                        src={link.url}
+                        icon={link.icon}
+                      />
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           </div>

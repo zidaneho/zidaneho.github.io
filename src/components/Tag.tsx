@@ -2,10 +2,10 @@ import type React from "react";
 
 interface TagProps {
   name: string;
-  iconSrc: string | "none";
+  icon?: React.ReactNode;
   src: string;
 }
-const Tag: React.FC<TagProps> = ({ name, iconSrc, src }) => {
+const Tag: React.FC<TagProps> = ({ name, icon, src }) => {
   const isExternal = /^https?:\/\//.test(src);
 
   return (
@@ -29,8 +29,8 @@ const Tag: React.FC<TagProps> = ({ name, iconSrc, src }) => {
           
         "
       >
-        {iconSrc !== "none" && <img src={iconSrc} className="w-5 h-5"></img>}
         <p className="text-md">{name}</p>
+        {icon}
       </button>
     </a>
   );

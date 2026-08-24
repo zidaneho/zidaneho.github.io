@@ -1,11 +1,13 @@
-
-
 function About() {
   return (
     <div
       id="about"
       className="flex flex-col w-full mt-4 items-center scroll-mt-20"
     >
+      <div className="w-full max-w-7xl px-6 sm:px-12 lg:px-24">
+        <h1 className="font-bold text-4xl text-center">About Me</h1>
+        <hr className="w-full h-px my-8 bg-hollow2 border-0"></hr>
+      </div>
       <main className="flex flex-col p-6 sm:p-12 lg:p-24 max-w-7xl">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center lg:items-start">
           <div className="w-full max-w-[320px] shrink-0 aspect-[4/5] overflow-hidden rounded-xl bg-slate-200">
@@ -32,8 +34,6 @@ function About() {
             </p>
           </div>
         </div>
-
-        
       </main>
     </div>
   );

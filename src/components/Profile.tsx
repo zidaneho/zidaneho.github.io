@@ -14,7 +14,7 @@ const Profile: React.FC = () => {
       </div>
       <div className="flex flex-col pl-4 animate-fade-in-slide [animation-delay:50ms]">
         <p className="font-extrabold text-4xl">Zidane Ho</p>
-        <p className="text-sm font-medium">Games Programmer, Software Engineer</p>
+        <p className="text-sm font-medium">Software Engineer at IT Services (UC San Diego)</p>
         <div className="flex flex-row items-center mt-1 gap-2">
           <AcademicCapIcon className="w-6 h-6" />
           <p className="text-sm">B.S of Computer Science at UC San Diego</p>
